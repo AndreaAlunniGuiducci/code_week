@@ -1,0 +1,27 @@
+.card{
+    border: 2px solid;
+    border-radius: 20px;
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+}
+
+#today, #futureWeek, #pastWeek{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    gap: 10px;
+}
+#pastWeek{
+    display: none;
+}
+
+#noToday, #noFuture{
+    font-size: 50px;
+    font-weight: bold;
+    color: crimson;
+}
+
+h2{
+    text-align: center;
+}
