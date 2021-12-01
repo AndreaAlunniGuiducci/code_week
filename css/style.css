@@ -33,7 +33,7 @@ h2{
     left: -13px;
 }
 
-#label h2{
+#label a{
     border: 1px solid black;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
@@ -47,6 +47,7 @@ h2{
 
 #__today{
     position: absolute;
+    top: 0;
     left: -250px;
 }
 #__future{
