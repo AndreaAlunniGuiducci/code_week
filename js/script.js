@@ -4,6 +4,9 @@ const future = document.querySelector('#futureWeek');
 const past = document.querySelector('#pastWeek');
 const noToday = document.querySelector('#noToday');
 const noFuture = document.querySelector('#noFuture');
+const todayBtn = document.querySelector('#__today');
+const futureBtn = document.querySelector('#__future');
+const pastBtn = document.querySelector('#__past');
 
 let d = new Date();
 
@@ -24,8 +27,7 @@ const renderDate = (dateCard) => {
             date.priority = Math.floor(Math.random() * 4) + 1,
             date.day = appoint[Math.floor(Math.random() * 6)],
         )
-    }).sort((a, b) => a.priority - b.priority);
-    console.log(dateCard);
+    });
 }
 
 
@@ -89,3 +91,16 @@ const createCard = (dateTitle, datePriority, dateDay) => {
 }
 
 getDate();
+
+// selezione area da visitare -------------------------------------------------------------------------
+todayBtn.addEventListener('click', () => {
+    location.href = '#today';
+})
+
+futureBtn.addEventListener('click', () => {
+    location.hash = '#futureWeek';
+})
+
+pastBtn.addEventListener('click', () => {
+    location.href = '#pastWeek';
+})

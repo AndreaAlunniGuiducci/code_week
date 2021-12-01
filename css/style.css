@@ -25,3 +25,50 @@
 h2{
     text-align: center;
 }
+
+#label{
+    position: fixed;
+    display: block;
+    margin: 10px;
+    left: -13px;
+}
+
+#label a{
+    border: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 5px;
+    padding-right: 20px;
+    background: blue;
+    color: white;
+    width: 251px;
+    transition: 0.5s ease;
+}
+
+#__today{
+    position: absolute;
+    top: 0;
+    left: -250px;
+}
+#__future{
+    position: absolute;
+    top: 50px;
+    left: -250px;
+}
+#__past{
+    position: absolute;
+    top: 100px;
+    left: -250px;
+}
+
+#__today:hover{
+    left: 0px;
+}
+#__future:hover{
+    left: 0px;
+}
+#__past:hover{
+    left: 0px;
+}
+
+
