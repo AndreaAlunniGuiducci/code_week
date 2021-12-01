@@ -24,8 +24,7 @@ const renderDate = (dateCard) => {
             date.priority = Math.floor(Math.random() * 4) + 1,
             date.day = appoint[Math.floor(Math.random() * 6)],
         )
-    }).sort((a, b) => a.priority - b.priority);
-    console.log(dateCard);
+    });
 }
 
 
