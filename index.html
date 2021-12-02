@@ -11,29 +11,47 @@
 
 <body>
 
-    <head>
-        <h1>Calendar Date</h1>
-    </head>
+    <header>
+        <h1 id="top">Calendar Date</h1>
+    </header>
     <div id="label">
         <h2><a id=__today>Oggi</a></h2>
         <h2><a id=__future>Futuri</a></h2>
         <h2><a id=__past>Appuntamenti conclusi</a></h2>
     </div>
-    <main>
-        <h2>Oggi</h2>
-        <div id="today">
-            <p id="noToday">Non ci sono appuntamenti per oggi</p>
-        </div>
-        <h2>Questa settimana</h2>
-        <div id="futureWeek">
-            <p id="noFuture">Nessun
-                appuntamento previsto per i prossimi giorni</p>
-        </div>
-        <h2>Passati</h2>
-        <div id="pastWeek">
-        </div>
 
+    <main>
+        <div id="home">
+            <p>Selezionare la lista degli appuntamenti da consultare</p>
+            <p>ricordarsi che i colori sono in base al grado di urgenza:</p>
+            <ul>
+                <li>Rosso</li>
+                <li>Giallo</li>
+                <li>Verde</li>
+                <li>Bianco</li>
+            </ul>
+        </div>
+        <div id="wrapToday">
+            <h2>Oggi</h2>
+            <div id="today">
+                <p id="noToday">Non ci sono appuntamenti per oggi</p>
+            </div>
+        </div>
+        <div id="wrapFuture">
+            <h2>Questa settimana</h2>
+            <div id="futureWeek">
+                <p id="noFuture">Nessun
+                    appuntamento previsto per i prossimi giorni</p>
+            </div>
+        </div>
+        <div id="wrapPast">
+            <h2>Passati</h2>
+            <div id="pastWeek">
+            </div>
+        </div>
     </main>
+
+    <footer><img id='goTop' src="https://img.icons8.com/ios/50/000000/circled-up.png" /></footer>
     <script src="js/script.js" type="module"></script>
 </body>
 
