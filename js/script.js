@@ -7,29 +7,23 @@ const noFuture = document.querySelector('#noFuture');
 const todayBtn = document.querySelector('#__today');
 const futureBtn = document.querySelector('#__future');
 const pastBtn = document.querySelector('#__past');
+const goTop = document.querySelector('#goTop');
+const wrapToday = document.querySelector('#wrapToday');
+const wrapFuture = document.querySelector('#wrapFuture');
+const wrapPast = document.querySelector('#wrapPast');
 
+// data di oggi ----------------------------------------------------------------------------------
 let d = new Date();
-
+// lista provvissoria appuntamenti ---------------------------------------------------------------
 let appoint = [
     new Date('11 29 2021'),
     new Date('11 30 2021'),
     new Date('12 01 2021'),
-    new Date('12 03 2021'),
+    new Date('12 02 2021'),
     new Date('12 03 2021'),
     new Date('12 04 2021'),
     new Date('12 05 2021')
 ];
-
-const renderDate = (dateCard) => {
-    dateCard.map((date) => {
-        createCard(
-            date.title,
-            date.priority = Math.floor(Math.random() * 4) + 1,
-            date.day = appoint[Math.floor(Math.random() * 6)],
-        )
-    });
-}
-
 
 // chiamata fetch ------------------------------------------------------------------
 const getDate = async () => {
@@ -40,6 +34,18 @@ const getDate = async () => {
     return renderDate(data);
 };
 let dateList = [];
+
+// aggiunta chiavi a oggetti della chiamata API ---------------------------------------------------
+const renderDate = (dateCard) => {
+
+    dateCard.map((date) => {
+        createCard(
+            date.title,
+            date.priority = Math.floor(Math.random() * 4) + 1,
+            date.day = appoint[Math.floor(Math.random() * 6)],
+        )
+    })
+}
 
 // render card appuntamento -----------------------------------------------------------------------------
 const createCard = (dateTitle, datePriority, dateDay) => {
@@ -66,7 +72,6 @@ const createCard = (dateTitle, datePriority, dateDay) => {
 
     }
 
-
     const title = document.createElement('p');
     title.className = 'title';
     title.textContent = dateTitle;
@@ -77,6 +82,7 @@ const createCard = (dateTitle, datePriority, dateDay) => {
     date.textContent = `${dateDay.getDate()}/${dateDay.getMonth() + 1}/${dateDay.getFullYear()}`;
     card.append(date);
 
+    // inserire le card appuntamenti in base alle priorità ---------------------------------------------------------------------------
     if (dateDay.getDate() === d.getDate() && dateDay.getMonth() === d.getMonth() && dateDay.getFullYear() === d.getFullYear()) {
         today.append(card);
         noToday.style.display = 'none';
@@ -84,23 +90,51 @@ const createCard = (dateTitle, datePriority, dateDay) => {
         future.append(card);
         noFuture.style.display = 'none';
     } else if (dateDay < d) {
-        past.style.display = 'flex';
         past.append(card);
     }
 
 }
 
-getDate();
 
+document.addEventListener('DOMContentLoaded', () => {
+    location.hash = '#home'
+    getDate();
+})
+
+// mostra solo area in visita -----------------------------------------------------------------------
+window.addEventListener('hashchange', () => {
+
+    switch (location.hash) {
+        case '#today':
+            wrapToday.style.display = 'block';
+            wrapFuture.style.display = 'none';
+            wrapPast.style.display = 'none';
+            break;
+        case '#futureWeek':
+            wrapFuture.style.display = 'block';
+            wrapToday.style.display = 'none';
+            wrapPast.style.display = 'none';
+            break;
+        case '#pastWeek':
+            wrapPast.style.display = 'block';
+            wrapFuture.style.display = 'none';
+            wrapToday.style.display = 'none';
+            break;
+    }
+})
 // selezione area da visitare -------------------------------------------------------------------------
 todayBtn.addEventListener('click', () => {
     location.href = '#today';
 })
 
 futureBtn.addEventListener('click', () => {
-    location.hash = '#futureWeek';
+    location.href = '#futureWeek';
 })
 
 pastBtn.addEventListener('click', () => {
     location.href = '#pastWeek';
+})
+
+goTop.addEventListener('click', () => {
+    location.href = '#top'
 })
