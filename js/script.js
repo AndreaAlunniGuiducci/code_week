@@ -55,15 +55,15 @@ const createCard = (dateTitle, datePriority, dateDay) => {
     // cambio colore in base alle priorità -------------------------------------------------------------------
     switch (datePriority) {
         case 1:
-            card.style.backgroundColor = 'rgb(221, 53, 87)';
+            card.style.backgroundColor = '#44040C';
             break;
 
         case 2:
-            card.style.backgroundColor = 'rgb(218, 207, 55)';
+            card.style.backgroundColor = '#BC746B';
             break;
 
         case 3:
-            card.style.backgroundColor = 'rgb(68, 190, 68)';
+            card.style.backgroundColor = '#C4967D';
             break;
 
         case 4:
