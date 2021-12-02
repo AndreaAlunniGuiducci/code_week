@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Calendar Date</title>
 </head>
@@ -22,14 +25,16 @@
 
     <main>
         <div id="home">
-            <p>Selezionare la lista degli appuntamenti da consultare</p>
-            <p>ricordarsi che i colori sono in base al grado di urgenza:</p>
-            <ul>
-                <li>Rosso</li>
-                <li>Giallo</li>
-                <li>Verde</li>
-                <li>Bianco</li>
-            </ul>
+            <p id='__p'>Selezionare la lista degli appuntamenti da consultare</p>
+            <p>Grado di urgenza:</p>
+
+            <div id="red">Emergenza</div>
+
+            <div id="yellow">Urgenza</div>
+
+            <div id="green">Urgenza minore</div>
+
+            <div id="white">Non Urgenza</div>
         </div>
         <div id="wrapToday">
             <h2>Oggi</h2>
@@ -51,7 +56,9 @@
         </div>
     </main>
 
-    <footer><img id='goTop' src="https://img.icons8.com/ios/50/000000/circled-up.png" /></footer>
+    <footer><img id='goTop' src="https://img.icons8.com/ios/50/000000/circled-up.png" />
+        <p>torna su</p>
+    </footer>
     <script src="js/script.js" type="module"></script>
 </body>
 

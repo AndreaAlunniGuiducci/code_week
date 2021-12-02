@@ -1,22 +1,47 @@
 body{
-background: rgb(123, 189, 107);
+background: #28495a;
+font-family: 'Libre Baskerville', serif;
 }
 
 header{
     border: 1px solid;
     text-align: center;
-    background: crimson;
+    background: #edd094;
     margin-bottom: 20px;
     font-size: 30px;
+    color: rgb(75, 38, 45);
 }
 
 #home{
-    text-align: center;
     font-size: 20px;
 }
+#home p{
+    text-align: center;
+}
 
-#home ul li{
-    list-style: none;
+#green, #red, #yellow, #white{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid;
+    width: 190px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+#red{
+    background: #cb604e;
+}
+
+#yellow{
+    background: #e89a6a;
+}
+
+#green{
+    background: #6dab87;
+}
+
+#white{
+    background: #edd094;
 }
 
 footer{
@@ -66,6 +91,9 @@ footer{
 
 h2{
     text-align: center;
+    font-style: italic;
+    color:#edd094;
+    text-transform: uppercase;
 }
 
 #label{
@@ -78,12 +106,12 @@ h2{
 
 #label a{
     border: 1px solid black;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
     padding: 5px;
     padding-right: 20px;
-    background: blue;
-    color: white;
+    background: rgb(75, 38, 45);
+    color: #edd094;
     width: 251px;
     transition: 0.5s ease;
 }
