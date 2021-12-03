@@ -36,19 +36,21 @@ let dateList = [];
 
 // aggiunta chiavi a oggetti della chiamata API ---------------------------------------------------
 const renderDate = (dateCard) => {
+    const orderedCard = dateCard
+        .map((date) => {
+            date.priority = Math.floor(Math.random() * 4) + 1;
+            date.day = appoint[Math.floor(Math.random() * 6)];
 
-    dateCard.map((date) => {
-        date.priority = Math.floor(Math.random() * 4) + 1;
-        date.day = appoint[Math.floor(Math.random() * 6)];
-        createCard(
-            date.title,
-            date.priority,
-            date.day,
-        )
-    }).sort((a, b) => a.priority - b.priority);
-    console.log(dateCard);
-    return dateCard;
-}
+            return date;
+        })
+        .sort((a, b) => a.priority - b.priority);
+
+    orderedCard.forEach((el) => {
+        createCard(el.title, el.priority, el.day);
+    });
+
+    return orderedCard;
+};
 
 // render card appuntamento -----------------------------------------------------------------------------
 const createCard = (dateTitle, datePriority, dateDay) => {
