@@ -14,6 +14,9 @@ header{
 
 #home{
     font-size: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    height: 300px;
 }
 #home p{
     text-align: center;
@@ -21,6 +24,8 @@ header{
 
 #green, #red, #yellow, #white{
     display: inline-block;
+    position: absolute;
+    left: calc(50% - 110px);
     padding: 10px;
     border: 1px solid;
     width: 190px;
@@ -30,18 +35,22 @@ header{
 
 #red{
     background: #cb604e;
+    top: 90px;
 }
 
 #yellow{
     background: #e89a6a;
+    top: 140px;
 }
 
 #green{
     background: #6dab87;
+    top: 190px;
 }
 
 #white{
     background: #edd094;
+    top: 240px;
 }
 
 footer{

@@ -30,7 +30,6 @@ const getDate = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/todos');
     const data = await res.json();
     dateList = data;
-
     return renderDate(data);
 };
 let dateList = [];
@@ -39,12 +38,16 @@ let dateList = [];
 const renderDate = (dateCard) => {
 
     dateCard.map((date) => {
+        date.priority = Math.floor(Math.random() * 4) + 1;
+        date.day = appoint[Math.floor(Math.random() * 6)];
         createCard(
             date.title,
-            date.priority = Math.floor(Math.random() * 4) + 1,
-            date.day = appoint[Math.floor(Math.random() * 6)],
+            date.priority,
+            date.day,
         )
-    })
+    }).sort((a, b) => a.priority - b.priority);
+    console.log(dateCard);
+    return dateCard;
 }
 
 // render card appuntamento -----------------------------------------------------------------------------
